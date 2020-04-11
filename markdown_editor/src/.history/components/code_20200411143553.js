@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import '../style/editor.css'
 import marked from "marked";
-import hljs from 'react-hljs';
 
 const CodePanel = () =>{
 
@@ -9,18 +8,14 @@ const CodePanel = () =>{
     
     const getMarkDownText=()=> {
         marked.setOptions({
-            renderer: new marked.Renderer(),
-		gfm: true,
+            gfm: true,
 		tables: true,
 		breaks: false,
 		pedantic: false,
 		sanitize: true,
 		smartLists: true,
-		smartypants: false,
-		highlight: function (code) {
-			return hljs.highlightAuto(code).value
-        }
-    })
+		smartypants: false
+        })
     var rawMarkup = marked(Input, {sanitize: true});
     return { __html: rawMarkup }; 
     }

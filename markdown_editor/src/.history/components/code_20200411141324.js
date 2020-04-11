@@ -1,27 +1,12 @@
 import React,{useState} from 'react';
 import '../style/editor.css'
 import marked from "marked";
-import hljs from 'react-hljs';
 
 const CodePanel = () =>{
 
     const [Input,SetInput] = useState('test');
-    
     const getMarkDownText=()=> {
-        marked.setOptions({
-            renderer: new marked.Renderer(),
-		gfm: true,
-		tables: true,
-		breaks: false,
-		pedantic: false,
-		sanitize: true,
-		smartLists: true,
-		smartypants: false,
-		highlight: function (code) {
-			return hljs.highlightAuto(code).value
-        }
-    })
-    var rawMarkup = marked(Input, {sanitize: true});
+    var rawMarkup = marked('This is *Markdown*.', {sanitize: true});
     return { __html: rawMarkup }; 
     }
 

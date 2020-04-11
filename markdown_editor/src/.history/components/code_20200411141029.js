@@ -1,27 +1,12 @@
 import React,{useState} from 'react';
 import '../style/editor.css'
 import marked from "marked";
-import hljs from 'react-hljs';
 
 const CodePanel = () =>{
 
     const [Input,SetInput] = useState('test');
-    
     const getMarkDownText=()=> {
-        marked.setOptions({
-            renderer: new marked.Renderer(),
-		gfm: true,
-		tables: true,
-		breaks: false,
-		pedantic: false,
-		sanitize: true,
-		smartLists: true,
-		smartypants: false,
-		highlight: function (code) {
-			return hljs.highlightAuto(code).value
-        }
-    })
-    var rawMarkup = marked(Input, {sanitize: true});
+    var rawMarkup = marked('This is *Markdown*.', {sanitize: true});
     return { __html: rawMarkup }; 
     }
 
@@ -42,10 +27,17 @@ const CodePanel = () =>{
                 </form>
             </div>
             <div id='PreviewPanel'>
-                <h1>Preview</h1>
-                <div dangerouslySetInnerHTML={getMarkDownText()}></div>    
+                    <h1>Preview</h1>
+                <form>
+                    <label>
+                        <textarea id='PreviewEditor'
+                        onChange={e=>SetInput(e.target.value)}
+                        value={Input}
+                        ></textarea>
+                    </label>
+                </form>
             </div>
-            
+            <div dangerouslySetInnerHTML={getMarkDownText()}></div>
     </div>
 
     )

@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import '../style/editor.css'
 import marked from "marked";
-import hljs from 'react-hljs';
 
 const CodePanel = () =>{
 
