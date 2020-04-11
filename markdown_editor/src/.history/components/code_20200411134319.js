@@ -8,9 +8,8 @@ const CodePanel = () =>{
 
     return(
         <div id='MarkdownEditor'>
-            
-            <div id='CodePanel'>
             <h1>Mardown</h1>
+            <div id='CodePanel'>
                 <form>
                     <label>
                         <textarea id='CodeEditor'
@@ -21,16 +20,16 @@ const CodePanel = () =>{
                 </form>
             </div>
             <div id='PreviewPanel'>
-                    <h1>Preview</h1>
-                <form>
-                    <label>
-                        <textarea id='PreviewEditor'
-                        onChange={e=>SetInput(e.target.value)}
-                        value={Input}
-                        ></textarea>
-                    </label>
-                </form>
-            </div>
+                <h1>Preview</h1>
+            <form>
+                <label>
+                    <textarea id='PreviewEditor'
+                    onChange={e=>SetInput(e.target.value)}
+                    value={Input}
+                    ></textarea>
+                </label>
+            </form>
+        </div>
     </div>
 
     )

@@ -1,0 +1,8 @@
+*{
+    margin:0;
+    padding:0;
+}
+#MarkdownEditor{
+    display:grid;
+    grid-template-columns: auto auto;
+}

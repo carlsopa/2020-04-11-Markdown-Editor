@@ -6,7 +6,7 @@ import './style/editor.css'
 function App() {
   return (
     <div>
-      <PreviewPanel/>
+      <CodePanel/>
     </div>
   );
 }

@@ -5,8 +5,9 @@ import './style/editor.css'
 
 function App() {
   return (
-    <div>
+    <div className="MarkdownEditor">
       <PreviewPanel/>
+      <CodePanel/>
     </div>
   );
 }
